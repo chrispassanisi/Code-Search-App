@@ -1,0 +1,22 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+h1, h2 {
+  color: #444;
+}
+
+form {
+  margin-bottom: 20px;
+}
+
+input[type="text"] {
+  padding: 5px;
+  width: 300px;
+}
+
+button {
+  padding: 5px 10px;
+}
