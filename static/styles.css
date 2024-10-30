@@ -1,22 +1,67 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 
 body {
-  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  margin: 0;
+  font-family: Times;
 }
 
 h1, h2 {
   color: #444;
+  text-align: center;
+  font-size: 36px;
+}
+
+.container {
+  text-align: center;
+  margin-top: 35vh;
 }
 
 form {
-  margin-bottom: 20px;
+  margin-bottom: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 input[type="text"] {
-  padding: 5px;
-  width: 300px;
+  padding: 10px;
+  width: 400px;
+  height: 13px;
+  margin-bottom: 10px;
 }
 
 button {
-  padding: 5px 10px;
+  padding: 10px 15px;
+  align-items: right;
+  margin-bottom: 110px;
+}
+
+p {
+  text-align: center;
+  width: 450px;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+  height: 13px;
+}
+
+.home-button {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.home-button a:visited {
+  color: #0000ff;
 }

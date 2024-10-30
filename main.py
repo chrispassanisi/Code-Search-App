@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, redirect, url_for, jsonify
 import requests
 import os
 from dotenv import load_dotenv
@@ -24,16 +24,26 @@ def github_search(query):
     }
     response = requests.get(url, headers=headers, params=params)
     if response.ok: 
-        return response.json().get("items", [])
+        items = response.json().get("items", [])
+        filter = [item for item in items if item['name'].endswith('.py')]
+        return filter                
     else: 
-        return("Errors: no response.")
+        logging.error("Errors: no response.")
+        return []
 
 # The user function is the entry point of the GitHub search application. It prompts the user for their code.
 
 @app.route('/', methods=['GET', 'POST'])
 def user():
-  query = request.form.get("query", "")
+    if request.method == 'POST':
+        query = request.form.get("query", "")
+        return redirect(url_for('results', query=query))
+    return render_template("index.html")
+
+@app.route('/results')
+def results():
+  query = request.args.get("query", "")
   results = github_search(query)
-  return render_template("index.html", results=results)
+  return render_template("results.html", results=results)
 if __name__ == "__main__":
     app.run(debug=True)

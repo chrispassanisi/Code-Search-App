@@ -4,22 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-    <title>code_search_bot</title>
+    <title>Search Program Files</title>
 </head>
 <body>
-    <h1>code_search</h1>
+    <div class="container">
+    <h1>Search Program Files</h1>
     <form method="POST" action=".">
-        <input type="text" name="query" placeholder="Input your code here.">
+        <input type="text" name="query" placeholder="Find program files on GitHub.">
         <button type="submit">Search</button>
     </form>
-
     {% if results %}
-    <h2>Results:</h2>
-    <ul>
+    <ol>
         {% for item in results %}
         <li><a href="{{ item['html_url'] }}">{{ item['name'] }}</a></li>
         {% endfor %}
-    </ul>
+    </ol>
     {% endif %}
+    </div>
 </body>
 </html>

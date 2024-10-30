@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <title>Search Results</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: flex-start;
+      margin: 0;
+      padding: 0px;
+      font-family: Times New Roman, sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <div class="home-button">
+  <li class="back-to-home"> <a rel="stylesheet" href="https://2bfa64ab-6438-40d1-a9a4-772a84fd582d-00-15rvfbvsjqrxo.kirk.replit.dev/">Back to Home</a></li>
+  </div>
+  <div class="results">
+    {% if results %}
+    <ol>
+      {% for item in results %}
+      <li><a href="{{ item['html_url'] }}">{{ item['name'] }}</a></li>
+      {% endfor %}
+    </ol>
+    {% else %}
+    <p>No results found.</p>
+    {% endif %}
+  </div>
+</body>
+</html>
+  
