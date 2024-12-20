@@ -24,4 +24,4 @@ This project is open-source and available under the [MIT License](LICENSE).
 
 ---
 
-Thank you for visiting. If you need any more details or just want to say hi, I can be reached at chris@nexusbios.co or (213) 257-5045.
+Thank you for visiting. If you need any more details or just want to say hi, you can contact me at chris@nexusbios.co or (213) 257-5045.
