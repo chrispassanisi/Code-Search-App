@@ -2,10 +2,6 @@ This is a web application that allows users to search all of the repositories on
 files with foundational code for multimodal neural natworks that can be personalized for humans.
 # Code Search App
 
-### Link to Project
-
-[Live Demo](http://recruiters-love-seeing-live-demos.com/) *(Note: Replace with actual demo URL if applicable)*
-
 ### Tech Used:
 - **Python**
 - **Flask** (Python web framework) for the backend
